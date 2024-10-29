@@ -127,8 +127,8 @@ runs:
         pip install lxml packaging
         python ${GITHUB_ACTION_PATH}/core.py ${{ github.event.repository.name }}/ \
           --pattern '${{ inputs.branches-or-tags-to-list }}' \
-          --refs_order ${{ inputs.refs-order }} \
-          --base_url https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+          --refs_order '${{ inputs.refs-order }}' \
+          --base_url 'https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/'
       shell: bash
 
     - name: Commit and push changes
